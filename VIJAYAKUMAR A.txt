@@ -1,0 +1,113 @@
+import java.util.*;
+public class AtmInterface {
+	public static void main(String[] args) {
+		System.out.println("*************Insert your card***********");
+		Scanner a=new Scanner(System.in);
+		System.out.println("   Wait a sec load your detalis    ");
+		System.out.println("Enter 1: Withdraw the Amount");
+		System.out.println("Enter 2: Balance Enquery");
+		System.out.println("Enter 3: Deposit the Amount");
+		System.out.println("Enter 4: Fast Cash");
+		System.out.println("Enter 5: Pin Generator");
+		int b=a.nextInt();
+		int balance=50000,withdraw,deposit,fast;
+		int pin,pingenerator,pin1;
+		switch(b) {
+		case 1:
+			System.out.println("Enter your pin number");
+			pin=a.nextInt();
+			if(pin>100&&pin<999) {
+			if(balance>b) {
+				System.out.println("Enter the amount");
+				withdraw=a.nextInt();
+				balance=balance-withdraw;
+				System.out.println("Collect your cash "+withdraw);
+				System.out.println("Available Balance "+balance);
+			}else {
+				System.out.println("Insufficent balance");
+			}}else {
+				System.out.println("your pin number is worng. Please Enter your correct pin number");
+			}
+			break;
+		case 2:
+			System.out.println("Enter your pin");
+			pin=a.nextInt();
+			if(pin>100&&pin<999) {
+			System.out.println("Avalible Balance "+balance);
+			}
+			else {
+				System.out.println("your pin number is worng. Please Enter your correct pin number");
+			}
+			break;
+		case 3:
+			System.out.println("Enter your pin");
+			pin=a.nextInt();
+			if(pin>100&&pin<999) {
+			System.out.println("Enter the Deposit Amount");
+			deposit=a.nextInt();
+			balance=balance+deposit;
+			System.out.println("Amount is added "+deposit);
+			System.out.println("Total balance "+balance);
+			}
+			else {
+				System.out.println("your pin number is worng. Please Enter your correct pin number");
+			}
+			break;
+		case 4:
+			System.out.println("Enter your pin");
+			pin=a.nextInt();
+			if(pin>100&&pin<999) {
+			if(balance>b) {
+				System.out.println("------Choose to this opstion-------");
+				System.out.println("choose to 1 2000");
+				System.out.println("choose to 2 4000");
+				System.out.println("choose to 3 8000");
+				System.out.println("choose to 4 10000");
+				System.out.println("choose to 5 12000");
+				
+				fast=a.nextInt();
+				switch(fast) {
+				case 1:
+					System.out.println("collect the cash 2000");
+					break;
+				case 2:
+					System.out.println("collect the cash 4000");
+					break;
+				case 3:
+					System.out.println("collect the cash 8000");
+					break;
+				case 4:
+					System.out.println("collect the cash 10000");
+					break;
+				case 5:
+					System.out.println("collect the cash 12000");
+					break;
+				}
+			}
+			}
+			else {
+				System.out.println("your pin number is worng. Please Enter your correct pin number");
+			}
+			break;
+		case 5:
+			System.out.println("Create your 3 digit pin number");
+			pingenerator=a.nextInt();
+			System.out.println("Confirm pin number");
+			pin1=a.nextInt();
+			if(pingenerator>100&&pingenerator<999) {
+				if(pingenerator==pin1) {
+				System.out.println("Your pin generator is successfully update");
+			}else {
+				System.out.println("Please enter same number");
+			}}else {
+				System.out.println("Please enter 3 digit pin number");
+			}
+			break;
+			
+		}
+		
+		
+		
+	}
+
+}
